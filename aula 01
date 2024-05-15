@@ -1,0 +1,15 @@
+const server = http.createServer((req,res) => {
+    const {url} = req;
+    console.log(url);
+    if(url === '/'){
+        res.end('Ola eu sou o Node.js');
+    } else if (url === '/contact'){
+        res.end('Pagina de contatos');
+    } else if(url === '/about') {
+        res.end('Pagina sobre o Assunto');
+    } else {
+        res.writeHead(404)
+        res.end('Pagina não Encontrada!!');
+    }
+    });
+
